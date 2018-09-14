@@ -57,7 +57,9 @@
               <li>
                 <a href="#">Our products</a>
                 <ul>
-                  <li><a href="/showroom">Showroom</a></li>
+                  <li>
+                    <router-link to="/showroom">Showroom </router-link>
+                  </li>
                   <li><a href="/pictures">Pictures</a></li>
                   <li><a href="/videos">Videos</a></li>
                   <li><a href="/flycam">Flycam</a></li>

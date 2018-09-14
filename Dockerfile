@@ -15,7 +15,4 @@ RUN npm rebuild node-sass
 
 ADD . /vue-frontend/
 
-
 EXPOSE 8080
-
-CMD ["npm", "start"]
