@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
 import Pictures from '@/components/pictures'
-import Showroom from '@/components/showroom'
+import Decoration from '@/components/decoration'
 import Videos from '@/components/videos'
 import Costume from '@/components/costume'
 import Concept from '@/components/concept'
@@ -12,6 +12,11 @@ import Page404 from '@/components/page404'
 import Gallery from '@/components/gallery'
 import PicIns from '@/components/pic-ins'
 import Price from '@/components/price'
+import Detail from '@/components/details'
+import Stories from '@/components/stories'
+import StoryDetail from '@/components/story-detail'
+import PicSys from '@/components/pic-sys'
+import PicCode from '@/components/pic-code'
 
 // import Info from '@/components/info'
 // import Preview from '@/components/post/post-preview'
@@ -37,6 +42,9 @@ Vue.use(Router)
 const router = new Router({
   base: '/',
   mode: 'history',
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -50,7 +58,6 @@ const router = new Router({
     {
       path: '/pictures',
       component: Pictures,
-      name: 'Pictures',
       children: [
         {
           path: '',
@@ -65,9 +72,9 @@ const router = new Router({
       ]
     },
     {
-      path: '/showroom',
-      component: Showroom,
-      name: 'Showroom'
+      path: '/decoration',
+      component: Decoration,
+      name: 'Decoration'
     },
     {
       path: '/videos',
@@ -78,6 +85,12 @@ const router = new Router({
       path: '/costume',
       component: Costume,
       name: 'Costume'
+    },
+    {
+      path: '/article/:id',
+      component: Detail,
+      name: 'Detail',
+      alias: ['/costume/:id', '/concept/:id', '/posing/:id', '/offer/:id']
     },
     {
       path: '/concept',
@@ -99,6 +112,26 @@ const router = new Router({
       path: '/coming',
       component: ComingSoon,
       name: 'ComingSoon'
+    },
+    {
+      path: '/stories',
+      component: Stories,
+      name: 'Stories'
+    },
+    {
+      path: '/stories/:id',
+      component: StoryDetail,
+      name: 'StoryDetail'
+    },
+    {
+      path: '/viewers',
+      component: PicSys,
+      name: 'PicSys'
+    },
+    {
+      path: '/viewers/:code',
+      component: PicCode,
+      name: 'PicCode'
     },
     {
       path: '**',

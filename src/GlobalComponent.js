@@ -9,7 +9,11 @@ import Carousel from './components/ComponentGlobal/carousel.vue'
 import PostPreview from './components/ComponentGlobal/post-preview.vue'
 import ArticleItem from './components/ComponentGlobal/article-item.vue'
 import ArticleList from './components/ComponentGlobal/article-list.vue'
+import ArticleDetail from './components/ComponentGlobal/article-detail.vue'
 import PriceItem from './components/ComponentGlobal/price-item'
+import Sidebar from './components/ComponentGlobal/side-bar'
+import Tag from './components/ComponentGlobal/tag'
+import Gift from './components/ComponentGlobal/gift'
 
 /**
  * You can register global components here and use them as a plugin in your main Vue instance
@@ -29,6 +33,10 @@ const GlobalComponents = {
     Vue.component('article-item', ArticleItem)
     Vue.component('article-list', ArticleList)
     Vue.component('price-item', PriceItem)
+    Vue.component('article-detail', ArticleDetail)
+    Vue.component('side-bar', Sidebar)
+    Vue.component('tag', Tag)
+    Vue.component('gift', Gift)
   }
 }
 

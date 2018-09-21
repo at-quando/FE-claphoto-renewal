@@ -1,7 +1,9 @@
 <template>
   <div class="d-flex">
-    <div class="figure-box" v-for="(item,index) in figures">
-      <figure-item :figure="item"/>
+    <div class="figure-box" v-for="(item,index) in figures" :key="index">
+      <router-link :to="item.url">
+        <figure-item :figure="item"/>
+      </router-link>
     </div>
   </div>
 </template>

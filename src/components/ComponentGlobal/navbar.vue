@@ -51,40 +51,38 @@
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul id="nav" class="navbar-nav">
-				      <li>
-                <a href="/home">Home</a>
+				      <li >
+                <router-link class="nav-hover" to="/home" tag="a" exact><i class="fa fa-home" aria-hidden="true"></i>  Trang chủ</router-link>
               </li>
               <li>
-                <a href="#">Our products</a>
+                <router-link class="nav-hover" :class="{'router-link-exact-active': subIsActivePic()}" to="/pictures" tag="a"><i class="fa fa-tag" aria-hidden="true"></i>  Sản phẩm  <i class="fa fa-angle-down" aria-hidden="true"></i></router-link>
                 <ul>
-                  <li>
-                    <router-link to="/showroom">Showroom </router-link>
-                  </li>
-                  <li><a href="/pictures">Pictures</a></li>
-                  <li><a href="/videos">Videos</a></li>
-                  <li><a href="/flycam">Flycam</a></li>
+                  <li><router-link to="/pictures">Ảnh</router-link></li>
+                  <li><router-link to="/videos">Video</router-link></li>
+                  <li><router-link to="/decoration?type=5">Trang trí</router-link></li>
+                  <li><router-link to="/stories">Câu chuyện lớp</router-link></li>
                 </ul>
               </li>
-              <li><a href="#">Pricing</a>
+              <li><router-link class="nav-hover" :class="{'router-link-exact-active': subIsActivePrice()}" to="/price" tag="a"><i class="fa fa-money" aria-hidden="true"></i>  Bảng giá  <i class="fa fa-angle-down" aria-hidden="true"></i></router-link>
               <ul>
-                <li><a href="/price?title=Combo&type=2">Combo Price</a></li>
-                <li><a href="/price?title=Albums&type=0">Albums Price</a></li>
-                <li><a href="/price?title=Videos&type=1">Videos Price</a></li>
+                <li><router-link to="/price?title=Combo&type=2">Gói combo</router-link></li>
+                <li><router-link to="/price?title=Albums&type=0">Gói chụp</router-link></li>
+                <li><router-link to="/price?title=Videos&type=1">Gói quay</router-link></li>
               </ul>
               </li>
-              <li><a href="">Services</a>
+              <li><router-link class="nav-hover" :class="{'router-link-exact-active': subIsActiveService()}" to="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Dịch vụ  <i class="fa fa-angle-down" aria-hidden="true"></i></router-link>
                 <ul>
-                  <li><a href="/offer">Offer</a></li>
-                  <li><a href="/costume">Costumes</a></li>
-                  <li><a href="/concept">Concept</a></li>
-                  <li><a href="/posing">Posing</a></li>
-                  <li><a href="/ask">Ask & Answer</a></li>
+                  <li><router-link to="/offer">Khuyến mãi</router-link></li>
+                  <li><router-link to="/costume">Trang phục</router-link></li>
+                  <li><router-link to="/concept">Ý tưởng</router-link></li>
+                  <li><router-link to="/posing">Tạo dáng</router-link></li>
+                  <li><router-link to="/ask">Hỏi - đáp</router-link></li>
                 </ul>
               </li>
               <li>
-                <a href="#">Get Albums</a>
+                <router-link class="nav-hover" to="/viewers" tag="a" exact><i class="fa fa-search" aria-hidden="true"></i>  Tìm ảnh</router-link>
               </li>
-              <li><a href="/about">About Us</a></li>
+              <li><router-link class="nav-hover" to="/about" tag="a" exact><i class="fa fa-id-card-o" aria-hidden="true"></i>  Về chúng tôi</router-link></li>
             </ul>
           </div>
         </div>
@@ -94,43 +92,39 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
   import * as types from '../../store/types'
-  import {fbLogout} from '../../helper/authFacebook.js'
 
   export default{
     props: ['navVar'],
     methods: {
-      ...mapActions({
-        setConnected: types.SET_CONNECTION,
-        setCurrentUser: types.SET_CURRENT_USER,
-        logoutEmail: types.LOG_OUT
-      }),
-      logout () {
-        const provider = localStorage.getItem('PROVIDER')
-        localStorage.clear()
-        if (provider === 'fb') {
-          fbLogout()
-          .then(response => {
-            this.setConnected({status: false, provider: ''})
-            this.setCurrentUser(null)
-          })
-        } else if (provider === 'email') {
-          this.logoutEmail()
-        }
-      }
-    },
-    computed: {
-      ...mapGetters({
-        currentUser: types.CURRENT_USER,
-        connected: types.CONNECTED
-      })
+     subIsActivePrice() {
+       return this.$route.path === '/price'
+     },
+     subIsActiveService() {
+       return (['/offer', '/costume', '/concept', '/posing', '/ask'].filter(x => x == this.$route.path).length > 0)
+     },
+     subIsActivePic() {
+       return (['/pictures', '/videos', '/decoration', '/stories'].filter(x => x == this.$route.path).length > 0)
+     }
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .logo-main {
   width: 300px;
   margin: 0 auto;
+}
+.inner-header {
+  .router-link-exact-active {
+    color: #293249 !important;
+  }
+}
+.router-link-exact-active {
+  font-size: 18px !important;
+}
+.nav-hover {
+  &:hover {
+    color: #ee8033 !important;
+  }
 }
 </style>

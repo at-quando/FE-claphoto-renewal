@@ -1,11 +1,18 @@
 <template>
   <div class="cp-post-carousel">
     <div id="cp-post-carousel" class="owl-carousel">
-      <div v-for="(item, index) of articles" :key="index" class="item">
-        <img class="lazyOwl" :src="item.images[0].name.url |takeImage" alt="Lazy Owl Image">
-        <div class="cp-slider-content">
-          <h2><a href="#">{{item.title}}</a></h2>
-        </div>
+      <div v-for="(item, index) of articles" :key="index" class="item carousel-item-custom">
+          <img class="lazyOwl" :src="item.images[0].name.url |takeImage" alt="Lazy Owl Image">
+          <div class="cp-slider-content">
+            <h2><a href="#">{{item.title}}</a></h2>
+            <ul class="cp-post-meta">
+              <li>
+                <router-link :to="{name: 'Detail', params: {id: item.id}}" tag="a">
+                  Xem thêm
+                </router-link>
+              </li>
+            </ul>
+          </div>
       </div>
     </div>
   </div>
@@ -40,7 +47,12 @@ export default {
   height: 563px;
 }
 .lazyOwl {
-  height: 563px !important;
-  width: auto !important;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.carousel-item-custom {
+  height: 563px;
+  overflow: hidden;
 }
 </style>

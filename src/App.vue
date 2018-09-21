@@ -20,17 +20,20 @@ export default {
   mounted() {
     if (this.$route.fullPath === '/home') {
       this.navbarToggle = 0
-    } else if (this.$route.fullPath === '/showroom') {
+    } else if (this.$route.fullPath === '/showroom' || this.$route.name === 'Decoration' || this.$route.name === 'StoryDetail') {
       this.navbarToggle = 2
     } else {
       this.navbarToggle = 1
     }
   },
-  methods: {
-  },
-  computed: {
-  },
-  watch: {
+  updated() {
+    if (this.$route.name === 'Home') {
+      this.navbarToggle = 0
+    } else if (this.$route.name === 'Showroom' || this.$route.name === 'Decoration' || this.$route.name === 'StoryDetail') {
+      this.navbarToggle = 2
+    } else {
+      this.navbarToggle = 1
+    }
   }
 };
 </script>

@@ -5,17 +5,32 @@
       <div class="cp-listed-items">
         <div class="container-fluid">
           <figure-list :figures="figures"></figure-list>
-          <figure-list :figures="figures1"></figure-list>
-          <figure-list :figures="figures2"></figure-list>
-          <carousel :articles="articles"/>
         </div>
       </div>
+    </div>
+    <div class="cp-heading-holder">
+      <h3 class="align-center title-home">Tiêu điểm nổi bật </h3>
+      <div id="cp-content-wrap" class="cp-content-wrap pd-tb0">
+        <div class="cp-listed-items">
+          <div class="container-fluid">
+            <figure-list :figures="figures1"></figure-list>
+            <figure-list :figures="figures2"></figure-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cp-heading-holder">
+      <h3 class="align-center title-home">Trang phục và concept <br> đang làm mưa làm gió</h3>
+      <carousel :articles="articles"/>
     </div>
     <div id="cp-content-wrap" class="cp-content-wrap">
       <div class="container">
         <div class="cp-posts-style-1 cp-posts-style-2">
-          <ul class="cp-posts-list">
-            <prepost/>
+          <div class="cp-heading-holder">
+            <h3 class="title-home">Đọc báo cùng The Classic</h3>
+          </div>
+          <ul class="cp-posts-list" v-if="mainArticle != null">
+            <prepost :mainArticle="mainArticle"/>
           </ul>
         </div>
       </div>
@@ -38,18 +53,21 @@ export default {
           timeBefore: '12/9-20/9',
           type: 'Hot event',
           topic: 'GET 30% OFFER',
-          cover: require('../assets/images/main-6.jpg')
+          cover: require('../assets/images/main-6.jpg'),
+          url: '/offer/33'
         },
         {
           timeBefore: '',
           type: 'Trang Phục - Ảnh - Video',
           topic: 'Perfect Combo',
-          cover: require('../assets/images/main-5.jpg')
+          cover: require('../assets/images/main-5.jpg'),
+          url: '/price?title=Combo&type=2'
         },
         {
           timeBefore: '1 phần/ 1 lớp',
           topic: 'GET YOUR GIFT',
-          cover: require('../assets/images/main-4.jpg')
+          cover: require('../assets/images/main-4.jpg'),
+          url: '/gift'
         }
       ],
       figures1: [
@@ -57,7 +75,8 @@ export default {
           timeBefore: '',
           type: '',
           topic: 'Watch Our Gallery',
-          cover: require('../assets/images/main-9.jpg')
+          cover: require('../assets/images/main-9.jpg'),
+          url: '/pictures'
         }
       ],
       figures2: [
@@ -65,20 +84,20 @@ export default {
           timeBefore: '',
           type: 'LÀM TÓC - TRANG ĐIỂM - TẠO DÁNG',
           topic: 'Beauty Instruction',
-          cover: require('../assets/images/main-8.jpg')
+          cover: require('../assets/images/main-8.jpg'),
+          url: '/posing?type=beauty'
         },
         {
           timeBefore: '',
           type: 'TRANG trí - ban đêm - lớp học',
           topic: 'Watch Decoration',
-          cover: require('../assets/images/main-7.jpg')
+          cover: require('../assets/images/main-7.jpg'),
+          url: '/concept'
         }
       ],
-      articles: []
+      articles: [],
+      mainArticle: null
     }
-  },
-  created () {
-    console.log(122)
   },
   mounted () {
     if ($('#cp-banner-1').length) {
@@ -91,6 +110,9 @@ export default {
     Vue.http.get(types.HOT_COSTUME).then(res => {
       this.articles = res.body
     })
+    Vue.http.get(types.MAIN_ARTICLE).then(res => {
+      this.mainArticle = res.body
+    })
   },
   methods: {
     setData (post) {
@@ -101,4 +123,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title-home {
+  margin: 20px 10px;
+  font-size: 2rem;
+}
+.cp-heading-holder {
+  margin: 0;
+}
 </style>

@@ -95,6 +95,10 @@ input {
   text-align: right;
 }
 
+.align-center {
+  text-align: center;
+}
+
 .masonry-container {
   width: 100%;
   margin: 0 auto;
@@ -104,4 +108,13 @@ input {
   content: "";
   clear: both;
   display: table;
+}
+
+.viewer {
+  @include sl960 {
+    height: 40vh;
+  }
+  @include s960 {
+    height: 100vh;
+  }
 }

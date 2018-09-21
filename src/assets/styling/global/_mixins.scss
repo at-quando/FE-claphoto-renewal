@@ -64,6 +64,11 @@
     @content;
   }
  }
+ @mixin sl960 {
+  @media (max-width: 960px) {
+    @content;
+  }
+ }
  @mixin s1024 {
   @media (min-width: 1024px) {
     @content;

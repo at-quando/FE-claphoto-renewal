@@ -1,6 +1,6 @@
 <template>
   <div v-if="articles.length != 0">
-    <banner/>
+    <banner v-if="imp" :imp="imp"/>
     <div id="cp-content-wrap" class="cp-content-wrap">
       <div class="container">
         <div class="row"> 
@@ -17,12 +17,14 @@ export default {
   name: 'Costume',
   data () {
     return {
-      articles: []
+      articles: [],
+      imp: null
     }
   },
   created () {
-    this.$http.get(types.LIST_COSTUME).then(res => {
+    this.$http.get(types.LIST_ARTICLE, {params: {kind: 0}}).then(res => {
       this.articles = res.body
+      this.imp = this.articles.filter(x => x.favorite == 1)
     })
   },
   mounted () {

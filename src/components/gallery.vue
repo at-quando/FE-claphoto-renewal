@@ -3,69 +3,13 @@
     <div class="container">
       <div class="row"> 
         <div class="col-md-12">
-          <div class="cp-grid-isotope gallery">
+          <div class="cp-grid-isotope gallery" v-if="products.length > 0">
             <div class="isotope items">
-              <div class="item height2">
-                <figure class="cp-hover-eff"> <img alt="img02" src="../assets/images/gallery/mgg-1.jpg">
+              <div class="item" v-for="(item, index) of products" :key="index">
+                <figure class="cp-hover-eff"> <progressive-img class="product-photo" alt="img02" :src="item.photo.url | takeImage"/>
                   <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
-                </figure>
-              </div>
-              <div class="item">
-                <figure class="cp-hover-eff"><img src="../assets/images/gallery/mgg-2.jpg" alt="" />
-                  <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
-                </figure>
-              </div>
-              <div class="item height2">
-                <figure class="cp-hover-eff"><img src="../assets/images/gallery/mgg-3.jpg" alt="" />
-                  <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
-                </figure>
-              </div>
-              <div class="item">
-                <figure class="cp-hover-eff"><img src="../assets/images/gallery/mgg-4.jpg" alt="" />
-                  <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
-                </figure>
-              </div>
-              <div class="item">
-                <figure class="cp-hover-eff"><img src="../assets/images/gallery/mgg-5.jpg" alt="" />
-                  <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
-                </figure>
-              </div>
-              <div class="item height2">
-                <figure class="cp-hover-eff"><img src="../assets/images/gallery/mgg-6.jpg" alt="" />
-                  <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
-                </figure>
-              </div>
-              <div class="item">
-                <figure class="cp-hover-eff"><img src="../assets/images/gallery/mgg-7.jpg" alt="" />
-                  <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
-                </figure>
-              </div>
-              <div class="item">
-                <figure class="cp-hover-eff"><img src="../assets/images/gallery/mgg-8.jpg" alt="" />
-                  <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
-                </figure>
-              </div>
-              <div class="item">
-                <figure class="cp-hover-eff"><img src="../assets/images/gallery/mgg-9.jpg" alt="" />
-                  <figcaption>
-                    <h3>Sunday Lunch <span>Dessert</span></h3>
-                    <a href="images/gallery/mgg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> </figcaption>
+                    <a :href="item.photo.url | takeImage" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> 
+                  </figcaption>
                 </figure>
               </div>
             </div>
@@ -98,8 +42,20 @@
 </template>
 
 <script>
+import * as types from '../store/types'
+
 export default {
   name: 'Gallery',
+  data () {
+    return {
+      products: []
+    }
+  },
+  created () {
+    this.$http.get(types.LIST_PRODUCTS, {params: {kind: this.$route.query.type}}).then(res => {
+      this.products = res.body
+    })
+  },
   mounted() {
     $('.js-item').addClass('item-type')
     if (this.$route.query.type == '1') {
@@ -115,6 +71,8 @@ export default {
       $('.item-4').addClass('active')
       $('.item-4').removeClass('item-type')
     }
+  },
+  updated() {
     if ($(".cp-grid-isotope .isotope").length) {
       var $container = $('.cp-grid-isotope .isotope');
       $container.isotope({
@@ -131,6 +89,16 @@ export default {
             columnWidth: $container.width() / 12
           }
         });
+      });
+    }
+    setTimeout(() => {$(window).trigger("resize")}, 1500)
+    if ($('.gallery').length) {
+      $("area[data-rel^='prettyPhoto']").prettyPhoto();
+      $(".gallery:first a[data-rel^='prettyPhoto']").prettyPhoto({
+        animation_speed:'normal',
+        theme:'light_square',
+        slideshow:3000, 
+        autoplay_slideshow: false
       });
     }
   },
@@ -153,5 +121,10 @@ export default {
   .item-type {
     display: none;
   }
+}
+.product-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>

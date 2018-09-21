@@ -5,8 +5,8 @@
         <div class="row"> 
           <div class="col-md-3">
             <div class="widget textwidget">
-              <h3>About the NeoMag</h3>
-              <p>At congue lectus interdum a. Nullam nisl tellus, tempus id mi nec, ornare suscipit purus. Integer nec dui ut eros consequat tempus vel at loremI mean everything absolute and blendered. </p>
+              <h3>About The Classic Studio</h3>
+              <p><i class="fa fa-gift"/> Bí ý tưởng kỉ yếu? <br><i class="fa fa-gift"/> Không biết chọn đơn vị kỉ yếu nào uy tín? <br><i class="fa fa-gift"/> Muốn tìm 1 đơn vị kỉ yếu trọn gói?<br> Đừng lo, đã có chúng tôi đây, với đầy đủ dịch vụ CHỤP ẢNH, QUAY PHIM, TRANG PHỤC, MAKE UP, XE DI CHUYỂN, chúng tôi tự tin là những người tiên phong, đi đầu trong lĩnh vực này, và chắc chắn sẽ mang đến cho các bạn sự hài lòng tuyệt đối nhất.</p>
               <ul class="footer-social">
                 <li><a href="#"><i class="fa fa-facebook-square"></i> </a></li>
                 <li><a href="#"><i class="fa fa-envelope"></i> </a></li>
@@ -38,11 +38,7 @@
           </div>
           <div class="col-md-3">
             <div class="widget cp-newsltter">
-              <h3>Newsletter</h3>
-              <form class="newsletter">
-                  <input type="email" required placeholder="Enter email for subscription..." name="email">
-                  <button type="submit">Subscribe Us</button>
-                </form>
+              <div class="fb-page" data-height="300" data-href="https://www.facebook.com/classic.yearbook/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/classic.yearbook/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/classic.yearbook/">The Classic Studio - Kỷ yếu số 1 Đà Thành</a></blockquote></div>
             </div>
           </div>
         </div>
@@ -50,18 +46,18 @@
     </div>
     <div class="footer-mid">
     <ul class="cp-insta-feed">
-    <li><img src="../../assets/images/finsta-1.jpg" alt=""></li>
-    <li><img src="../../assets/images/finsta-2.jpg" alt=""></li>
-    <li><img src="../../assets/images/finsta-3.jpg" alt=""></li>
-    <li><img src="../../assets/images/finsta-4.jpg" alt=""></li>
-    <li><img src="../../assets/images/finsta-5.jpg" alt=""></li>
-    <li><img src="../../assets/images/finsta-6.jpg" alt=""></li>
-    <li><img src="../../assets/images/finsta-7.jpg" alt=""></li>
-    <li><img src="../../assets/images/finsta-8.jpg" alt=""></li>
+    <li class="img-footer"><img src="../../assets/images/f1.jpg" alt=""></li>
+    <li class="img-footer"><img src="../../assets/images/f2.jpg" alt=""></li>
+    <li class="img-footer"><img src="../../assets/images/f3.jpg" alt=""></li>
+    <li class="img-footer"><img src="../../assets/images/f4.jpg" alt=""></li>
+    <li class="img-footer"><img src="../../assets/images/f5.jpg" alt=""></li>
+    <li class="img-footer"><img src="../../assets/images/f6.jpg" alt=""></li>
+    <li class="img-footer"><img src="../../assets/images/f7.jpg" alt=""></li>
+    <li class="img-footer"><img src="../../assets/images/f8.jpg" alt=""></li>
     </ul>
     </div>
     <div class="cp-footer-bottom">
-    <p>&copy; 2015 NeoMag by <a href="http://crunchpress.com" target="_blank">CrunchPress Themes</a> </p>
+    <p>&copy; 2018 by <a href="http://crunchpress.com" target="_blank">The Classic Studio</a> </p>
     </div>
   </footer>
 </template>
@@ -69,5 +65,15 @@
   export default{
   }
 </script>
+<style lang="scss">
+.img-footer {
+  height: 120px;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+</style>
 
 

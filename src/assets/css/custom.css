@@ -275,7 +275,7 @@ ul,li{
 
 .inner-header .cp-top-bar {
 
-	background: url(../images/inner-topbarbg.jpg) no-repeat center top;
+	background: url(../images/banner-main.jpg) no-repeat center top;
 
 	background-size: cover;
 
@@ -2481,7 +2481,7 @@ ul.row{
 
 	width: 100%;
 
-	background: url(../images/tesitmonial-bg-img.jpg) top left fixed;
+	/* background: url(../images/tesitmonial-bg-img.jpg) top left fixed; */
 
 	background-size: cover;
 
@@ -3201,7 +3201,7 @@ ul.row{
 
 	float: left;
 
-	margin: 0 3px 3px 0;
+	padding: 1px;
 
 }
 
@@ -4169,7 +4169,7 @@ ul.row{
 
 	list-style: none;
 
-	margin-bottom: 40px;
+	/* margin-bottom: 40px; */
 
 }
 
@@ -4545,7 +4545,7 @@ ul.row{
 
 .page404, .comming-soon {
 
-	background: url(../images/p404bg.jpg) no-repeat top center;
+	background: url(../images/comingsoon.jpg) no-repeat top center;
 
 	background-size: cover;
 
@@ -4963,7 +4963,7 @@ ul.row{
 
 	width: 100%;
 
-	height: auto;
+	/* height: auto; */
 
 }
 
@@ -5027,7 +5027,7 @@ ul.row{
 
 .cp-post-carousel .owl-theme .owl-controls {
 
-	bottom: 0;
+	/* bottom: 0; */
 
 	top: 45%;
 
@@ -5117,7 +5117,7 @@ ul.row{
 
 	width: 33.333333%;
 
-	height: 257px;
+	/* height: 257px; */
 
 	position:relative;
 

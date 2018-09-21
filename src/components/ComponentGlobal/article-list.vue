@@ -23,22 +23,24 @@ export default {
   mounted () {
     $(window).on("load", function() {
       var $container = $('.cp-news-isotope .isotope')
-      if ($container.length  && this.articles.length > 0) {
-        $container.isotope({
-          itemSelector: '.item',
-          transitionDuration: '0.6s',
-          masonry: {
-              columnWidth: $container.width() / 12
-          },
-          layoutMode: 'masonry'
-        })
-        $(window).resize(function() {
+      if (this.articles) {
+        if ($container.length  && this.articles.length > 0) {
           $container.isotope({
+            itemSelector: '.item',
+            transitionDuration: '0.6s',
             masonry: {
-              columnWidth: $container.width() / 12
-            }
+                columnWidth: $container.width() / 12
+            },
+            layoutMode: 'masonry'
           })
-        })
+          $(window).resize(function() {
+            $container.isotope({
+              masonry: {
+                columnWidth: $container.width() / 12
+              }
+            })
+          })
+        }
       }
     })
     if ($('.cp-home2-slider').length) {
