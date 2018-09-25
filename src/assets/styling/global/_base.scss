@@ -9,7 +9,6 @@
 body {
   color: grey;
   margin: 0;
-  font-family: $font-variables;
 }
 .d-flex {
   @include s768 {
@@ -28,7 +27,6 @@ p {
   margin: 1px 0;
 }
 input, textarea {
-  font-family: "Gibson Light", "Gibson Bold", "Gibson Regular", "Gibson SemiBold";
   font-size: 0.9rem;
 }
 button {
@@ -116,5 +114,62 @@ input {
   }
   @include s960 {
     height: 100vh;
+  }
+}
+.money{
+  font-family: 'Pony';
+  font-weight: lighter;
+  font-size: 25px;
+  padding-left: 30px;
+}
+.prepost {
+  height: 432px;
+  %extend-thumb {
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+  .thumb-prepost {
+    @extend %extend-thumb;
+    @include sl768 {
+      height: 200px !important;
+    }
+    @include s768 {
+      height: 432px !important;
+    }  
+  }
+  .thumb-prepost-small {
+    @extend %extend-thumb;
+    height: 100px !important;
+  }
+
+  .cp-post-base {
+    @include sl768 {
+    margin-top: -20px;
+    .cp-post-meta {
+      display: none;
+    }
+    }
+    @include s768 {
+      position: absolute !important;
+      top: 50%;
+      left: 0;
+      padding: 0 25px;
+    }
+  }
+  .cp-post-content {
+    padding: 25px;
+    @include s768 {
+      height: 251px;
+    }
+  }
+  .prepost {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .read-paper {
+    @include sl768 {
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
   }
 }

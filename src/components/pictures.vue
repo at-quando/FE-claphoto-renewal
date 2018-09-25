@@ -2,7 +2,7 @@
   <div class="picture">
     <div class="cp-middle-banner">
       <ul class="list-type-picture">
-        <router-link :to="{ name: 'Gallery', query: {title: 'Portrait', 'type': 1 }}"  exact>
+        <router-link :to="{ name: 'Gallery', query: {title: 'Portrait', 'type': 1 }}">
           <li class="col-1 item-1 js-item" @click="changeStyleCover">
             <figure class="banner-item">
               <img src="../assets/images/pic-4.jpg" alt="">
@@ -70,6 +70,9 @@ export default {
   data () {
     return {
     }
+  },
+  mounted() {
+    console.log(this.$route.path)
   },
   methods: {
     changeStyleCover(el) {

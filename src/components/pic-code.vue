@@ -2,113 +2,68 @@
   <div id="cp-content-wrap" class="cp-content-wrap">
     <div class="container">
       <div class="row"> 
-        <div class="col-md-9">
-          <div class="row">
-            <div class="cp-pagination">
-              <div>
-                <h2>12/1 - THPT PHAN CHAU TRINH</h2>
-                <p>TP ĐÀ NẴNG</p>
-                <p>Niên Khóa: 2013-2018</p>
-                <hr>
-              </div>
-              <nav>
-                <ul class="pagination">
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li><a class="active" href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-              </div>
-              <ul class="cp-grid-gallery gallery">
-                <li class="col-md-4">
-                  <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-1.jpg" alt="" />
-                    <figcaption>
-                      <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-1.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> 
-                    </figcaption>
-                  </figure>
-                </li>
-                <li class="col-md-4">
-                  <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-2.jpg" alt="" />
-                    <figcaption>
-                      <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-2.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                  </figure>
-                </li>
-                <li class="col-md-4">
-                  <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-3.jpg" alt="" />
-                    <figcaption>
-                      <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-3.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                  </figure>
-                </li>
-                <li class="col-md-4">
-                  <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-4.jpg" alt="" />
-                    <figcaption>
-                      <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-4.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                  </figure>
-                </li>
-                <li class="col-md-4">
-                  <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-5.jpg" alt="" />
-                    <figcaption>
-                      <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-5.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                  </figure>
-                </li>
-              <li class="col-md-4">
-                <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-6.jpg" alt="" />
-                  <figcaption>
-                    <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-6.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                </figure>
+        <div class="cp-pagination col-md-10" style="margin-left: -100px">
+          <div v-if="contract">
+            <h2>{{contract.group}} - {{contract.school}}</h2>
+            <p>{{contract.town}}</p>
+            <p>Niên Khóa: {{contract.school_year}}</p>
+            <hr>
+          </div>
+          <nav>
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
               </li>
-              <li class="col-md-4">
-                <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-7.jpg" alt="" />
-                  <figcaption>
-                    <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-7.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                </figure>
+              <li v-for="(item,index) in pages" :key="index">
+                <router-link :to="{name: 'PicCode', params: {id: $route.params.id}, query: {page: (index +1)}}" :class="{active: $route.query.page == (index + 1) }" replace>{{index + 1}}</router-link>
               </li>
-              <li class="col-md-4">
-                <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-8.jpg" alt="" />
-                  <figcaption>
-                    <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-8.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                </figure>
-              </li>
-              <li class="col-md-4">
-                <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-9.jpg" alt="" />
-                  <figcaption>
-                    <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-9.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                </figure>
-              </li>
-              <li class="col-md-4">
-                <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-10.jpg" alt="" />
-                  <figcaption>
-                    <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-10.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                </figure>
-              </li>
-              <li class="col-md-4">
-                <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-11.jpg" alt="" />
-                  <figcaption>
-                    <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-11.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                </figure>
-              </li>
-              <li class="col-md-4">
-                <figure class="cp-gallery-thumb"> <img src="../assets/images/gallery/fg-12.jpg" alt="" />
-                  <figcaption>
-                    <h2>Sunday <span>Lunch Dessert</span></h2><a class="cp-zoom" href="images/gallery/fg-12.jpg" data-rel="prettyPhoto"><i class="fa fa-search"></i></a> </figcaption>
-                </figure>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
               </li>
             </ul>
+          </nav>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-10" style="margin-left: -100px">
+          <transition name="fade">
+            <div class="cp-grid-isotope gallery" v-if="pictures && ($route.query.page ? $route.query.page : 1)  == (index + 1)" v-for="(itemPics, index) of pictures" :key="index">
+              <div class="isotope items">
+                <div class="item" v-for="(item, ind) of itemPics.pictureId.split(',')" :key="ind">
+                  <figure class="cp-hover-eff"> 
+                    <progressive-img class="product-photo" alt="img02" :src="item | smallGoogleImage"/>
+                    <figcaption>
+                      <h3>{{itemPics.name.split(',')[ind]}}</h3><a :href="item | mediumGoogleImage" data-rel="prettyPhoto"><i class="fa fa-search"></i> View Large</a> 
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </transition>
+          <div class="cp-pagination">
+            <nav>
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li v-for="(item,index) in pages" :key="index">
+                  <router-link :to="{name: 'PicCode', params: {id: $route.params.id}, query: {page: (index +1)}}" :class="{active: $route.query.page == (index + 1) }" replace>{{index + 1}}</router-link>
+                </li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" style="margin-right: -100px">
           <side-bar/>
         </div>
       </div>
@@ -122,21 +77,78 @@ export default {
   name: 'PicCode',
   data () {
     return {
-      
+      pictures: null,
+      picArr: null,
+      nameArr: null,
+      contract: null,
+      intervalId: null,
+      pages: 0
     }
   },
   created () {
-  console.log(gapi)
-   var request = gapi.client.request({
-    'method': 'GET',
-    'path': '/drive/v3/about',
-    'params': {'fields': 'user'}
-  });
-  // Execute the API request.
-  request.execute(function(response) {
-    console.log(response);
-  });
+    window.addEventListener('load', () => { console.log("It's loaded!"); $(window).trigger("resize"); window.clearInterval(this.intervalId);})
+    this.$http.get(`${types.SHOW_VIEWER}/${this.$route.params.code}`).then(res => {
+      this.contract = res.body.contract
+      this.pictures = res.body.meta.pic
+      this.pages = res.body.meta.count
+    })
+    this.intervalId = window.setInterval(() => {
+        $(window).trigger("resize")
+        console.log('resize')
+    },4000);
+  },
+  updated() {
+    if ($(".cp-grid-isotope .isotope").length) {
+      var $container = $('.cp-grid-isotope .isotope');
+      $container.isotope({
+        itemSelector: '.item',
+        transitionDuration: '0.6s',
+        masonry: {
+            columnWidth: $container.width() / 12
+        },
+        layoutMode: 'masonry'
+      });
+      $(window).resize(function() {
+        $container.isotope({
+          masonry: {
+            columnWidth: $container.width() / 12
+          }
+        });
+      });
+    }
+    if ($('.gallery').length) {
+      $("area[data-rel^='prettyPhoto']").prettyPhoto()
+      $(".gallery:first a[data-rel^='prettyPhoto']").prettyPhoto({
+        animation_speed:'normal',
+        theme:'light_square',
+        slideshow:3000, 
+        autoplay_slideshow: false
+      });
+    }
+    setTimeout(() => {$(window).trigger("resize")},1500)
+  },
+  methods: {
+    convertPicId (index) {
+      index = index? index -1 : 0
+      return this.pictures[index].pictureId.split(',')
+    },
+    convertPicName (index) {
+      index = index? index -1 : 0
+      return this.pictures[index].name.split(',')
+    }
   }
- 
 }
 </script>
+<style>
+.product-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>

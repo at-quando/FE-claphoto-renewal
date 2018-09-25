@@ -32,6 +32,8 @@ export default {
       this.kind = 2
     } else if (this.$route.path == '/posing') {
       this.kind = 1
+    } else if (this.$route.path == '/ask') {
+      this.kind = 3
     } else if (this.$route.path == '/offer') {
       this.kind = 4
     }

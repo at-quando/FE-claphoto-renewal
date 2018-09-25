@@ -38,27 +38,27 @@
         </div>
         <ul class="row">
             <li class="col-md-3 col-sm-6">
-              <a href="#" class="cp-social-inner fb-bg">
+              <a href="https://facebook.com/classic.yearbook" class="cp-social-inner fb-bg">
                 <strong class="icon"><i class="fa fa-facebook"></i></strong>
                 <strong class="right-content"><span class="bold">200k</span><span>Follow<i class="fa fa-plus-circle"></i></span></strong>
               </a>
             </li>
             <li class="col-md-3 col-sm-6">
               <a href="#" class="cp-social-inner tw-bg">
-                <strong class="icon"><i class="fa fa-twitter"></i></strong>
-                <strong class="right-content"><span class="bold">185k</span><span>Follow<i class="fa fa-plus-circle"></i></span></strong>
+                <strong class="icon"><i class="fa fa-camera"></i></strong>
+                <strong class="right-content"><span class="bold">250tr</span><span>Đầu tư<i class="fa fa-plus-circle"></i></span></strong>
               </a>
             </li>
             <li class="col-md-3 col-sm-6">
               <a href="#" class="cp-social-inner gplus-bg">
-                <strong class="icon"><i class="fa fa-google-plus"></i></strong>
-                <strong class="right-content"><span class="bold">170k</span><span>Follow<i class="fa fa-plus-circle"></i></span></strong>
+                <strong class="icon"><i class="fa fa-book"></i></strong>
+                <strong class="right-content"><span class="bold">5 Years</span><span>Kinh Nghiệm<i class="fa fa-plus-circle"></i></span></strong>
               </a>
             </li>
             <li class="col-md-3 col-sm-6">
               <a href="#" class="cp-social-inner linkedin-bg">
-                <strong class="icon"><i class="fa fa-linkedin"></i></strong>
-                <strong class="right-content"><span class="bold">350k</span><span>Follow<i class="fa fa-plus-circle"></i></span></strong>
+                <strong class="icon"><i class="fa fa-users"></i></strong>
+                <strong class="right-content"><span class="bold">3 GEN</span><span>Đào tạo<i class="fa fa-plus-circle"></i></span></strong>
               </a>
             </li>
         </ul>

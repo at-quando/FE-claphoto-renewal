@@ -28,7 +28,7 @@
                 </div>
               </div>
               <ul class="cp-top-bar-social">
-                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a target="_blank" href="https://facebook.com/classic.yearbook"><i class="fa fa-facebook-square"></i></a></li>
                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                 <li><a href="#"><i class="fa fa-behance"></i></a></li>
                 <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
@@ -65,9 +65,9 @@
               </li>
               <li><router-link class="nav-hover" :class="{'router-link-exact-active': subIsActivePrice()}" to="/price" tag="a"><i class="fa fa-money" aria-hidden="true"></i>  Bảng giá  <i class="fa fa-angle-down" aria-hidden="true"></i></router-link>
               <ul>
-                <li><router-link to="/price?title=Combo&type=2">Gói combo</router-link></li>
-                <li><router-link to="/price?title=Albums&type=0">Gói chụp</router-link></li>
+                <li><router-link to="/price?title=Combo&type=2">Gói chụp combo</router-link></li>
                 <li><router-link to="/price?title=Videos&type=1">Gói quay</router-link></li>
+                <li><router-link to="/clothes">Gói trang phục</router-link></li>
               </ul>
               </li>
               <li><router-link class="nav-hover" :class="{'router-link-exact-active': subIsActiveService()}" to="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Dịch vụ  <i class="fa fa-angle-down" aria-hidden="true"></i></router-link>

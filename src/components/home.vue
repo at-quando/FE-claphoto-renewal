@@ -24,15 +24,13 @@
       <carousel :articles="articles"/>
     </div>
     <div id="cp-content-wrap" class="cp-content-wrap">
-      <div class="container">
-        <div class="cp-posts-style-1 cp-posts-style-2">
+      <div class="container read-paper">
           <div class="cp-heading-holder">
-            <h3 class="title-home">Đọc báo cùng The Classic</h3>
+            <h3 class="align-center title-home">Đọc báo cùng The Classic</h3>
           </div>
-          <ul class="cp-posts-list" v-if="mainArticle != null">
-            <prepost :mainArticle="mainArticle"/>
+          <ul class="cp-posts-list" v-if="mainArticles != null" >
+            <prepost v-for="(item, index) of mainArticles" :key="index" class="col-md-6 prepost-mar" :mainArticle="item"/>
           </ul>
-        </div>
       </div>
     </div>
   </div>
@@ -96,7 +94,7 @@ export default {
         }
       ],
       articles: [],
-      mainArticle: null
+      mainArticles: null
     }
   },
   mounted () {
@@ -110,8 +108,8 @@ export default {
     Vue.http.get(types.HOT_COSTUME).then(res => {
       this.articles = res.body
     })
-    Vue.http.get(types.MAIN_ARTICLE).then(res => {
-      this.mainArticle = res.body
+    Vue.http.get(types.SHOW_RAND_EXCEPT).then(res => {
+      this.mainArticles = res.body
     })
   },
   methods: {
@@ -129,5 +127,8 @@ export default {
 }
 .cp-heading-holder {
   margin: 0;
+}
+.prepost-mar {
+  margin-bottom: 10px;
 }
 </style>

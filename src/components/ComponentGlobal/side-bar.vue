@@ -28,13 +28,15 @@
       </div>
       <div class="widget instagram-widget">
         <h3>Showroom</h3>
-        <div class="widget-content">
+        <div class="fb-post" data-href="https://www.facebook.com/DHQuan19/posts/1815982178449510" data-width="350" data-show-text="true"><blockquote cite="https://www.facebook.com/DHQuan19/posts/1815982178449510" class="fb-xfbml-parse-ignore"><p>kỷ yếu The Classic đang có chương trình khuyến mãi. 
+Hệ thống công nghệ của The Classic chuẩn bị ra lò. Và sẽ có nhiều...</p>Người đăng: <a href="https://www.facebook.com/DHQuan19">Quân Đỗ</a> vào&nbsp;<a href="https://www.facebook.com/DHQuan19/posts/1815982178449510">Thứ Bảy, 15 Tháng 9, 2018</a></blockquote></div>
+        <!-- <div class="widget-content">
           <ul class="insta" v-if="products">
             <li class="box-insta" v-for="(item, index) of products" :key="index">
               <img :src="item.photo.url | takeImage" alt="">
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
       <div class="widget categories-widget">
         <h3>Archives</h3>

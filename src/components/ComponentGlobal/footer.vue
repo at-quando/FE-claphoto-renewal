@@ -68,6 +68,7 @@
 <style lang="scss">
 .img-footer {
   height: 120px;
+  background-color: transparent !important;
   img {
     height: 100%;
     width: 100%;

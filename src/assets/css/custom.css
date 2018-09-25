@@ -28,6 +28,18 @@
 
 End of Table of Content Line 000 **/
 
+@font-face {
+  font-family: 'Pony';
+  src: url('../fonts/Pony.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Cubano';
+  src: url('../fonts/Cubano.otf');
+  font-weight: normal;
+}
+
 .cp-theme-style-1 {
 
 }
@@ -72,7 +84,8 @@ ul,li{
 
 #wrapper h1,#wrapper h2,#wrapper h3,#wrapper h4,#wrapper h5,#wrapper h6{
 
-	font-family: 'Domine', serif;
+	/* font-family: 'Cubano', serif; */
+	font-family: 'Gibson SemiBold';
 
 }
 
@@ -701,7 +714,7 @@ ul,li{
 
 	font-weight: 700;
 
-	font-family: "Domine", serif;
+	font-family: "Cubano", serif;
 
 	text-transform: uppercase;
 
@@ -1099,7 +1112,7 @@ strong.cp-logo-style-1 a {
 
 #cp-banner-style-1 .caption h1 {
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 36px;
 
@@ -1541,7 +1554,7 @@ strong.cp-logo-style-1 a {
 
 	margin: 0 0 9px;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 24px;
 
@@ -1555,7 +1568,7 @@ strong.cp-logo-style-1 a {
 
 	float: left;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	color: #666666;
 
@@ -1613,7 +1626,7 @@ strong.cp-logo-style-1 a {
 
 	font-size: 24px;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-weight: 700;
 
@@ -1687,7 +1700,7 @@ strong.cp-logo-style-1 a {
 
 	color: #000;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	border-bottom: 2px solid #d4d4d4;
 
@@ -1805,7 +1818,7 @@ strong.cp-logo-style-1 a {
 
 .cp-about-info h3{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 24px;
 
@@ -2245,7 +2258,7 @@ ul.row{
 
 .cp-post-item .cp-content .readmore{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 14px;
 
@@ -2631,7 +2644,7 @@ ul.row{
 
 .cp-price-item .title{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 16px;
 
@@ -2669,7 +2682,7 @@ ul.row{
 
 .cp-price-item .price-holder{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	margin: 0 0 30px;
 
@@ -2943,7 +2956,7 @@ ul.row{
 
 .cp-counter-item .counter{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 36px;
 
@@ -2995,7 +3008,7 @@ ul.row{
 
 	color: #000000;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 }
 
@@ -3151,7 +3164,7 @@ ul.row{
 
 	margin: 10px 0;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	color: #000;
 
@@ -3335,7 +3348,7 @@ ul.row{
 
 	font-size: 12px;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	color: #fff;
 
@@ -3409,7 +3422,7 @@ ul.row{
 
 	font-weight: 700;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 }
 
@@ -3673,7 +3686,7 @@ ul.row{
 
 	font-size: 24px;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-weight: 400;
 
@@ -3797,7 +3810,7 @@ ul.row{
 
 	margin: 18px 0 8px;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 }
 
@@ -3867,7 +3880,7 @@ ul.row{
 
 	padding: 0 20px;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 }
 
@@ -4177,7 +4190,7 @@ ul.row{
 
 	width: 100%;
 
-	overflow: hidden;
+	/* overflow: hidden; */
 
 	position: relative;
 
@@ -4193,13 +4206,13 @@ ul.row{
 
 .cp-gallery-thumb:after {
 
-	position: absolute;
+	/* position: absolute;
 
 	left: 0;
 
 	right: 0;
 
-	background: rgba(109,59,59,.87);
+	background: rgba(0,0,0,0.4);
 
 	width: 100%;
 
@@ -4207,7 +4220,7 @@ ul.row{
 
 	content: "";
 
-	z-index: 9;
+	z-index: 9; */
 
 }
 
@@ -4229,7 +4242,7 @@ ul.row{
 
 	color: #000;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	margin: 0px;
 
@@ -4261,7 +4274,7 @@ ul.row{
 
 	text-align: center;
 
-	background: rgba(109,59,59,.87);
+	background: rgba(0,0,0,0.4);
 
 	opacity: 0;
 
@@ -4343,7 +4356,7 @@ ul.row{
 
 	color: #fff;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 24px;
 
@@ -4561,7 +4574,7 @@ ul.row{
 
 .page404 h1 {
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-weight: 400;
 
@@ -4575,7 +4588,7 @@ ul.row{
 
 .page404 h3, .comming-soon h3 {
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-weight: 400;
 
@@ -4647,7 +4660,7 @@ ul.row{
 
 	border: 2px solid #666666;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 48px;
 
@@ -4669,7 +4682,7 @@ ul.row{
 
 	margin-top: 15px;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 }
 
@@ -4821,7 +4834,7 @@ ul.row{
 
 .cp-login-box button, .cp-signup-box button {
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	color: #fff;
 
@@ -4981,7 +4994,7 @@ ul.row{
 
 	font-size: 30px;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	margin: 10px 0 20px;
 
@@ -4995,7 +5008,7 @@ ul.row{
 
 .cp-post-carousel .cp-slider-content .cp-post-meta a {
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 14px;
 
@@ -5233,7 +5246,7 @@ figure.cp-hover-eff h3 {
 
     transition: transform 0.35s ease 0s;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	color:#fff;
 
@@ -5293,7 +5306,7 @@ figure.cp-hover-eff:hover h3, figure.cp-hover-eff:hover a {
 
 .cp-contact-inner-holder h3{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 24px;
 
@@ -5453,7 +5466,7 @@ figure.cp-hover-eff:hover h3, figure.cp-hover-eff:hover a {
 
 .cp-contact-form .cp-login-buttons button{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	min-width: 95px;
 
@@ -5589,7 +5602,7 @@ figure.cp-hover-eff:hover h3, figure.cp-hover-eff:hover a {
 
 .cp-social-inner .right-content .bold{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 24px;
 
@@ -5723,7 +5736,7 @@ figure.cp-hover-eff:hover h3, figure.cp-hover-eff:hover a {
 
 .cp-news-isotope .cp-post-content {background:#fff; width:100%; float:left; padding:20px; box-sizing:border-box;}
 
-.cp-news-isotope .cp-post-content h3 {margin:0 0 16px; font-size:24px; color:#000; font-family: 'Domine', serif; font-weight:700;}
+.cp-news-isotope .cp-post-content h3 {margin:0 0 16px; font-size:24px; color:#000; font-family: 'Cubano', serif; font-weight:700;}
 
 
 
@@ -5751,7 +5764,7 @@ figure.cp-hover-eff:hover h3, figure.cp-hover-eff:hover a {
 
 .cp-news-isotope .item blockquote .cp-thumb:after {position:absolute; left:0; width:100%; height:100%; content:""; background:rgba(0,0,0,.80)}
 
-.cp-news-isotope .item blockquote p {font-family: 'Domine', serif; font-weight:700; color:#fff; font-size:24px; line-height:30px;}
+.cp-news-isotope .item blockquote p {font-family: 'Cubano', serif; font-weight:700; color:#fff; font-size:24px; line-height:30px;}
 
 .cp-news-isotope .item blockquote .cp-post-content {position:absolute; left:0; top:0; z-index:99; background:none;}
 
@@ -5873,7 +5886,7 @@ figure.cp-hover-eff:hover h3, figure.cp-hover-eff:hover a {
 
 .banner-item figcaption h3{
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 	font-size: 36px;
 
@@ -6045,7 +6058,7 @@ figure.cp-hover-eff:hover h3, figure.cp-hover-eff:hover a {
 
 	font-family: 'Lato', sans-serif;
 
-	font-family: 'Domine', serif;
+	font-family: 'Cubano', serif;
 
 }
 

@@ -4,7 +4,7 @@
       <li class="cp-post">
         <div class="cp-thumb">
           <ul class="cp-post-slider">
-            <li v-for="(item, index) of article.images" :key="index">
+            <li v-if="article.images.length > 0" v-for="(item, index) of article.images" :key="index">
               <img class="detail-img" :src="item.name.url | takeImage" alt="Neo"/>
             </li>
           </ul>
@@ -17,22 +17,19 @@
               <li><a href="#">{{article.created_at |moment}}</a></li>
               <li><a href="#"><i class="fa fa-comment-o"></i> 2 Comments</a></li>
             </ul>
+            <div class="fb-like" :data-href="url" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+            <hr>
             <p>{{article.description}}</p>
             <p id="myDiv"></p>
-          </div>
-          <div class="cp-post-share">
-            <ul>
-              <li> <a href="#"><i class="fa fa-facebook"></i> Share Facebook</a> </li>
-              <li> <a href="#"><i class="fa fa-twitter"></i> Share Twitter</a> </li>
-              <li> <a href="#"><i class="fa fa-google-plus"></i> Share Google</a> </li>
-            </ul>
+            <hr>
           </div>
           <div class="cp-related-posts">
+            <div class="fb-like" :data-href="url" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
             <h4>You May Also Like</h4>
             <ul class="cp-posts">
               <li class="cp-post" v-for="(item, index) of articlesRelated" :key="index">
                 <router-link :to="{name: 'Detail', params: {id: item.id}}" tag="a" >
-                  <div class="cp-thumb-r"><img class="fit-image-details" :src="item.images[0].name.url | takeImage" alt=""></div>
+                  <div class="cp-thumb-r"><img class="fit-image-details" v-if="item.images[0]" :src="item.images[0].name.url | takeImage" alt=""></div>
                   <div class="cp-post-text">
                     <h4><a href="#">{{item.title}}</a></h4>
                     <strong>{{item.created_at |moment}}</strong> 
@@ -44,13 +41,7 @@
           <div class="cp-post-comments-form">
             <div class="row">
               <h4>Leave a Comment</h4>
-              <ul class="comment-form">
-                <li class="col-md-6"><input type="text" class="form-control" placeholder="Name*" required></li>
-                <li class="col-md-6"><input type="text" class="form-control" placeholder="Email*" required></li>
-                <li class="col-md-12"><input type="text" class="form-control" placeholder="Website*" required></li>
-                <li class="col-md-12"><textarea class="form-control" placeholder="Comment*" required></textarea></li>
-                <li class="col-md-12"><input type="submit" class="btn-submit" value="Submit"></li>
-              </ul>
+              <div class="fb-comments"  v-if="url"  :data-href="url" data-numposts="10"></div>
             </div>
           </div>
         </div>
@@ -61,8 +52,17 @@
 
 <script>
 import Vue from 'vue'
+
 export default {
   props: ['article', 'articlesRelated'],
+  data () {
+    return {
+      url : null
+    }
+  },
+  created() {
+    this.url = window.location.href
+  },
   mounted() {
     if ($('.cp-post-slider').length) {
       $('.cp-post-slider').bxSlider({
@@ -80,6 +80,8 @@ export default {
         $("p:has(img)").css({textAlign: "center"});
       })
     }
+  },
+  updated() {
   }
 }
 </script>
@@ -92,11 +94,7 @@ export default {
   height: 100%;
   object-fit: cover;
 }
-.fit-image-details {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 .cp-thumb-r {
   height: 200px;
   overflow: hidden;
@@ -105,6 +103,11 @@ export default {
   h4 {
     margin: 20px 0;
   }
+}
+.fit-image-details {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
 

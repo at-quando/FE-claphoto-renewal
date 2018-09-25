@@ -10,7 +10,7 @@ Vue.filter('takeImage', function (value) {
 })
 
 Vue.filter('smallGoogleImage', function (value) {
-  return `https://drive.google.com/thumbnail?id=${value}&sz=w300-h300`
+  return `https://drive.google.com/thumbnail?id=${value}&sz=w314-h472`
 })
 
 Vue.filter('mediumGoogleImage', function (value) {

@@ -27,8 +27,7 @@
               <li><a href="#">20 days ago</a></li>
               <li><a href="#">Music</a></li>
             </ul>
-            <blockquote>From easy home photography projects you can  today 
-              to creative long-terms projects, here are 52 fantastic photo ideas you have to try this year.</blockquote>
+            <blockquote>{{articleItem.title}}</blockquote>
             <a href="single-post.html" class="read-more">Read More</a> <a href="#" class="leave-comment"><i class="fa fa-comment-o"></i> Leave a Comment</a> </div>
         </div>
       </li>

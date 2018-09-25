@@ -5,6 +5,8 @@ import Pictures from '@/components/pictures'
 import Decoration from '@/components/decoration'
 import Videos from '@/components/videos'
 import Costume from '@/components/costume'
+import ClothesDetails from '@/components/clothes-detail'
+import Clothes from '@/components/clothes'
 import Concept from '@/components/concept'
 import AboutUs from '@/components/about-us'
 import ComingSoon from '@/components/coming-soon'
@@ -42,9 +44,9 @@ Vue.use(Router)
 const router = new Router({
   base: '/',
   mode: 'history',
-  scrollBehavior () {
-    return { x: 0, y: 0 }
-  },
+  // scrollBehavior () {
+  //   return { x: 0, y: 0 }
+  // },
   routes: [
     {
       path: '/',
@@ -87,16 +89,26 @@ const router = new Router({
       name: 'Costume'
     },
     {
+      path: '/clothes',
+      component: Clothes,
+      name: 'Clothes'
+    },
+    {
+      path: '/clothes/:id',
+      component: ClothesDetails,
+      name: 'ClothesDetails'
+    },
+    {
       path: '/article/:id',
       component: Detail,
       name: 'Detail',
-      alias: ['/costume/:id', '/concept/:id', '/posing/:id', '/offer/:id']
+      alias: ['/costume/:id', '/concept/:id', '/posing/:id', '/offer/:id', '/ask/:id']
     },
     {
       path: '/concept',
       component: Concept,
       name: 'Concept',
-      alias: ['/posing', '/offer']
+      alias: ['/posing', '/offer', '/ask']
     },
     {
       path: '/about',
