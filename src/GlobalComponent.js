@@ -14,6 +14,7 @@ import PriceItem from './components/ComponentGlobal/price-item'
 import Sidebar from './components/ComponentGlobal/side-bar'
 import Tag from './components/ComponentGlobal/tag'
 import Gift from './components/ComponentGlobal/gift'
+import Noti from './components/ComponentGlobal/notification'
 
 /**
  * You can register global components here and use them as a plugin in your main Vue instance
@@ -37,6 +38,7 @@ const GlobalComponents = {
     Vue.component('side-bar', Sidebar)
     Vue.component('tag', Tag)
     Vue.component('gift', Gift)
+    Vue.component('noti', Noti)
   }
 }
 

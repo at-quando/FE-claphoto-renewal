@@ -1,8 +1,8 @@
 <template>
   <div id="cp-content-wrap" class="cp-content-wrap">
-    <div class="container">
+    <div class="container view-container">
       <div class="row"> 
-        <div class="cp-pagination col-md-10" style="margin-left: -100px">
+        <div class="cp-pagination col-md-10 col-sm-10 view-pic">
           <div v-if="contract">
             <h2>{{contract.group}} - {{contract.school}}</h2>
             <p>{{contract.town}}</p>
@@ -27,8 +27,8 @@
             </ul>
           </nav>
         </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="margin-left: -100px">
+        <div class="col-md-2 col-sm-2"></div>
+        <div class="col-md-10 col-sm-10 view-pic">
           <transition name="fade">
             <div class="cp-grid-isotope gallery" v-if="pictures && ($route.query.page ? $route.query.page : 1)  == (index + 1)" v-for="(itemPics, index) of pictures" :key="index">
               <div class="isotope items">
@@ -63,7 +63,7 @@
             </nav>
           </div>
         </div>
-        <div class="col-md-3" style="margin-right: -100px">
+        <div class="col-md-3 col-sm-3 side-bar-pic">
           <side-bar/>
         </div>
       </div>

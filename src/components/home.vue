@@ -40,7 +40,6 @@
 import * as types from '../store/types'
 import Vue from 'vue'
 import store from '../store/store'
-import {mapActions, mapGetters} from 'vuex'
 
 export default {
   name: 'Home',
@@ -50,20 +49,20 @@ export default {
         {
           timeBefore: '12/9-20/9',
           type: 'Hot event',
-          topic: 'GET 30% OFFER',
+          topic: 'NHẬN 30% OFFER',
           cover: require('../assets/images/main-6.jpg'),
           url: '/offer/33'
         },
         {
           timeBefore: '',
           type: 'Trang Phục - Ảnh - Video',
-          topic: 'Perfect Combo',
+          topic: 'COMBO SIÊU CHẤT',
           cover: require('../assets/images/main-5.jpg'),
           url: '/price?title=Combo&type=2'
         },
         {
           timeBefore: '1 phần/ 1 lớp',
-          topic: 'GET YOUR GIFT',
+          topic: 'NHẬN QUÀ ONLINE',
           cover: require('../assets/images/main-4.jpg'),
           url: '/gift'
         }
@@ -72,7 +71,7 @@ export default {
         {
           timeBefore: '',
           type: '',
-          topic: 'Watch Our Gallery',
+          topic: 'Thư Viện Ảnh',
           cover: require('../assets/images/main-9.jpg'),
           url: '/pictures'
         }
@@ -81,16 +80,16 @@ export default {
         {
           timeBefore: '',
           type: 'LÀM TÓC - TRANG ĐIỂM - TẠO DÁNG',
-          topic: 'Beauty Instruction',
+          topic: 'Hướng Dẫn Làm Đẹp Chụp Kỉ Yếu',
           cover: require('../assets/images/main-8.jpg'),
           url: '/posing?type=beauty'
         },
         {
           timeBefore: '',
           type: 'TRANG trí - ban đêm - lớp học',
-          topic: 'Watch Decoration',
+          topic: 'Trang Trí Ngoại Cảnh',
           cover: require('../assets/images/main-7.jpg'),
-          url: '/concept'
+          url: '/decoration?type=5'
         }
       ],
       articles: [],

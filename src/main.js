@@ -9,27 +9,21 @@ import directive from './helper/directive'
 import router from './router'
 import VueResource from 'vue-resource'
 import GlobalComponents from './GlobalComponent'
-import Gallery from './components/ComponentPlugin/GalleryPlugin'
 import VueI18n from 'vue-i18n'
 import i18n from './locales/config'
 import ElementUI from 'element-ui'
 import VueProgressiveImage from 'vue-progressive-image'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import './assets/css/custom.css'
-import './assets/css/color.css'
 import './assets/css/bootstrap.css'
-import './assets/css/responsive.css'
 import './assets/css/jquery.bxslider.css'
 import './assets/css/prettyPhoto.css'
 import './assets/styling/style.scss'
-import './assets/css/font-awesome.min.css'
 
 Vue.use(ElementUI)
 Vue.use(VueI18n)
 Vue.use(Vuex)
 Vue.use(router)
-Vue.use(Gallery)
 Vue.use(VueResource)
 Vue.use(GlobalComponents)
 Vue.use(VueProgressiveImage)

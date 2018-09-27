@@ -45,7 +45,24 @@
               <h4>Mô tả</h4>
               <p>{{cloth.description}}</p>
               <router-link v-if="cloth.link" tag="a" :to="{name: 'Detail', params: {id: cloth.link}}" class="btn btn-primary">XEM BÀI THAM KHẢO</router-link>
-              <button class="btn btn-success">CHỌN BỘ NÀY</button>
+              <button v-if="!booked" class="btn btn-primary" 
+                  @click="booking({
+                  id: cloth.id,
+                  price: cloth.hire,
+                  priceFirst: 0,
+                  name: cloth.name,
+                  type: 1,
+                  types: 0,
+                  url: $route.fullPath
+                }); booked = true">
+                CHỌN BỘ NÀY
+              </button>
+              <div v-else>
+              <button class="btn btn-success">
+                ✓ ĐÃ CHỌN TRANG PHỤC NÀY
+              </button>
+              <button @click="deleteBooking({id: price.id, type: 0}); booked = false" style="margin-top: 10px">Không book nữa click vào đây</button>
+              </div>
             </div>
           </div>
         </div>
@@ -84,7 +101,9 @@
 </template>
 
 <script>
+import {mapGetters, mapActions} from 'vuex'
 import * as types from '../store/types'
+
 export default {
   name: 'ClothesDetails',
   data() {
@@ -94,7 +113,8 @@ export default {
       cloth: null,
       sup: null,
       url : null,
-      articlesRand: null
+      articlesRand: null,
+      booked: false
     }
   },
   created () {
@@ -112,6 +132,12 @@ export default {
     })
     this.$http.get(types.SHOW_RAND_DETAIL).then(res => {
       this.articlesRand = res.body
+    })
+  },
+  methods: {
+    ...mapActions({
+      booking: 'booking',
+      deleteBooking: 'deleteBooking'
     })
   }
 }
@@ -164,5 +190,11 @@ export default {
 }
 .cp-thumb-r {
   height: 200px;
+}
+.cp-post-text {
+  padding-top: 10px;
+  h4 {
+    font-size: 15px;
+  }
 }
 </style>

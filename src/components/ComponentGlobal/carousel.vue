@@ -18,7 +18,6 @@
   </div>
 </template>
 <script>
-import {mapGetters, mapActions} from 'vuex'
 import * as types from '../../store/types'
 
 export default {

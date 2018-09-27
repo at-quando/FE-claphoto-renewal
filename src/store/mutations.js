@@ -1,5 +1,5 @@
 export default {
-  mutateSomeAction: (state, payload) => {
-    state.action = payload
+  mutateBooking: (state, payload) => {
+    state.packs = payload
   }
 }

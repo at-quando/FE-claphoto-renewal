@@ -55,7 +55,7 @@
                 <router-link class="nav-hover" to="/home" tag="a" exact><i class="fa fa-home" aria-hidden="true"></i>  Trang chủ</router-link>
               </li>
               <li>
-                <router-link class="nav-hover" :class="{'router-link-exact-active': subIsActivePic()}" to="/pictures" tag="a"><i class="fa fa-tag" aria-hidden="true"></i>  Sản phẩm  <i class="fa fa-angle-down" aria-hidden="true"></i></router-link>
+                <a class="nav-hover" :class="{'router-link-exact-active': subIsActivePic()}"><i class="fa fa-tag" aria-hidden="true"></i>  Sản phẩm  <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul>
                   <li><router-link to="/pictures">Ảnh</router-link></li>
                   <li><router-link to="/videos">Video</router-link></li>
@@ -63,14 +63,14 @@
                   <li><router-link to="/stories">Câu chuyện lớp</router-link></li>
                 </ul>
               </li>
-              <li><router-link class="nav-hover" :class="{'router-link-exact-active': subIsActivePrice()}" to="/price" tag="a"><i class="fa fa-money" aria-hidden="true"></i>  Bảng giá  <i class="fa fa-angle-down" aria-hidden="true"></i></router-link>
+              <li><a class="nav-hover" :class="{'router-link-exact-active': subIsActivePrice()}"><i class="fa fa-money" aria-hidden="true"></i>  Bảng giá  <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul>
-                <li><router-link to="/price?title=Combo&type=2">Gói chụp combo</router-link></li>
-                <li><router-link to="/price?title=Videos&type=1">Gói quay</router-link></li>
+                <li><router-link :to="{path: '/price', query: {title: 'Combo', type: 2}}" append>Gói chụp combo</router-link></li>
+                <li><router-link :to="{path: '/price', query: {title: 'Videos', type: 1}}" append>Gói quay</router-link></li>
                 <li><router-link to="/clothes">Gói trang phục</router-link></li>
               </ul>
               </li>
-              <li><router-link class="nav-hover" :class="{'router-link-exact-active': subIsActiveService()}" to="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Dịch vụ  <i class="fa fa-angle-down" aria-hidden="true"></i></router-link>
+              <li><a class="nav-hover" :class="{'router-link-exact-active': subIsActiveService()}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Dịch vụ  <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul>
                   <li><router-link to="/offer">Khuyến mãi</router-link></li>
                   <li><router-link to="/costume">Trang phục</router-link></li>
@@ -110,10 +110,6 @@
   }
 </script>
 <style lang="scss" scoped>
-.logo-main {
-  width: 300px;
-  margin: 0 auto;
-}
 .inner-header {
   .router-link-exact-active {
     color: #293249 !important;

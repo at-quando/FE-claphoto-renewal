@@ -10,3 +10,18 @@ table {
     width: 65%;
   }
 }
+.side-bar-pic {
+  @include s768 {
+    margin-right: -100px;
+  }
+}
+.view-pic {
+  @include s768 {
+    margin-left: -100px;
+  }
+}
+.view-container {
+  @include sl640 {
+    
+  }
+}

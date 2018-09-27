@@ -34,6 +34,11 @@
     @content;
   }
  }
+ @mixin sl640 {
+  @media (max-width: 639px) {
+    @content;
+  }
+ }
  @mixin s568{
   @media (min-width: 568px) {
     @content;

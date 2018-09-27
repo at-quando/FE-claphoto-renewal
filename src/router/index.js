@@ -44,9 +44,9 @@ Vue.use(Router)
 const router = new Router({
   base: '/',
   mode: 'history',
-  // scrollBehavior () {
-  //   return { x: 0, y: 0 }
-  // },
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  },
   routes: [
     {
       path: '/',

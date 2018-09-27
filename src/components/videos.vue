@@ -4,9 +4,9 @@
       <div class="container">
         <div class="row">
           <ul class="cp-extended-gallery gallery">
-            <li class="col-md-6" v-for="(item,index) of videos" :key="index">
+            <li class="col-md-6" style="margin-bottom: 20px" v-for="(item,index) of videos" :key="index">
               <figure class="cp-gallery-thumb"> 
-                <iframe :src="`https://www.facebook.com/plugins/video.php?href=${item.video}`" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                <iframe :src="`https://www.facebook.com/plugins/video.php?href=${item.video}`" width="100%" height="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
               </figure>
               <div class="cp-gallery-content">
                 <h3>{{item.title}}</h3>
@@ -52,3 +52,10 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.cp-gallery-thumb {
+  width: 555px;
+  height: 300px;
+}
+</style>
+

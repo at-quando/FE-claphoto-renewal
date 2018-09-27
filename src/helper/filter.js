@@ -10,7 +10,12 @@ Vue.filter('takeImage', function (value) {
 })
 
 Vue.filter('smallGoogleImage', function (value) {
-  return `https://drive.google.com/thumbnail?id=${value}&sz=w314-h472`
+  if (screen.width < 415) {
+    console.log(screen.width)
+    return `https://drive.google.com/thumbnail?id=${value}&sz=w128-h192`
+  } else {
+    return `https://drive.google.com/thumbnail?id=${value}&sz=w314-h472`
+  }
 })
 
 Vue.filter('mediumGoogleImage', function (value) {

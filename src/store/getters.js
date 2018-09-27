@@ -1,5 +1,5 @@
 export default {
-  actionVar: state => {
-    return state.action
+  packs: state => {
+    return state.packs
   }
 }

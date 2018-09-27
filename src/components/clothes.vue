@@ -28,6 +28,10 @@
             </li>
           </ul>
         </div>
+        <div>
+          <h4 id="skip"  class="title-price">XEM CÁC BẢNG GIÁ KHÁC</h4>
+           <figure-list :figures="figures"></figure-list>
+        </div>
       </div>
     </div>
   </div>
@@ -40,7 +44,30 @@ export default {
   data () {
     return {
       clothes: [],
-      colorArr: ['#f2852b', '#e91e5f', '#2583c5', '#99509f', '#66b446']
+      colorArr: ['#f2852b', '#e91e5f', '#2583c5', '#99509f', '#66b446'],
+      figures: [
+        {
+          timeBefore: 'chụp - xe di chuyển - trang phục',
+          type: 'Bảng giá',
+          topic: 'Gói Combo',
+          cover: require('../assets/images/main-6.jpg'),
+          url: '/price?title=Combo&type=2'
+        },
+        {
+          timeBefore: '2tr VND quà tặng',
+          type: 'Bảng giá',
+          topic: 'Quay Phim',
+          cover: require('../assets/images/main-5.jpg'),
+          url: '/price?title=Combo&type=1'
+        },
+        {
+          timeBefore: 'Độc - lạ',
+          type: 'Bảng giá',
+          topic: 'Concept - Trang Phục',
+          cover: require('../assets/images/main-4.jpg'),
+          url: '/clothes'
+        }
+      ],
     }
   },
   created () {
