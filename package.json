@@ -7,7 +7,7 @@
   "scripts": {
     "dev:docker": "npm run dev",
     "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",
-    "prod": "webpack-dev-server --host 0.0.0.0 --inline --history-api-fallback --progress --config build/webpack.prod.conf.js",
+    "prod": "webpack-dev-server --host 0.0.0.0 --disableHostCheck true --inline --history-api-fallback --progress --config build/webpack.prod.conf.js",
     "start": "npm run dev",
     "serve": "node server.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
