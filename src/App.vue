@@ -51,8 +51,6 @@
           </div>
         </transition>
       </div>
-      <!-- <div class="options-detail">
-      </div> -->
     </div>
     <transition
       name="custom-classes-transition"

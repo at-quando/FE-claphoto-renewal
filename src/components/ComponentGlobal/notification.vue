@@ -4,7 +4,7 @@
     <router-link :to="{name: 'Detail', params: {id: noti.id} }">
       <div class="row">
         <div class="box-img-noti" style="width: 129px">
-          <img class="noti-img" src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg">
+          <img class="noti-img" :src="noti.image">
         </div>
         <div class="col-md-7 noti-meta">
           <h2 class="noti-title">{{noti.title}}</h2>
